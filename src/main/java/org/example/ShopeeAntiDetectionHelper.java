@@ -20,6 +20,7 @@ public class ShopeeAntiDetectionHelper {
 
     public static void hideWebDriverFlag(WebDriver driver) {
         try {
+
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})");
             js.executeScript("navigator.chrome = {runtime: {}};");
